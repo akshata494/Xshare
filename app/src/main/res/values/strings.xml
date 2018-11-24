@@ -2,5 +2,17 @@
     <string name="app_name">hanchu</string>
     <string name="title_activity_send">SendActivity</string>
     <string name="title_select_items">Select items</string>
+    <string name="SendText">Send</string>
+    <string name="ReceiveText">Receive</string>
+    <string name="title_activity_navtemp">navtemp</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

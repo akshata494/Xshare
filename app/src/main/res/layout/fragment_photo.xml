@@ -12,7 +12,7 @@
         android:columnWidth="280dp"
         android:gravity="center"
         android:horizontalSpacing="2dp"
-        android:numColumns="2"
+        android:numColumns="4"
         android:padding="2dp"
         android:stretchMode="columnWidth"
         android:verticalSpacing="2dp" >

@@ -3,6 +3,7 @@ package com.example.akshata.hanchu;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.Manifest;
 import android.content.Intent;
@@ -14,12 +15,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.larswerkman.holocolorpicker.ColorPicker;
+
 public class MainActivity extends AppCompatActivity implements Constants {
 
     private ImageButton sendButton;
     private ImageButton receiveButton;
     private Button recievedFiles;
     private Button shareApp;
+    Toolbar toolbar;
 
     public static final String tag = "abcdmain";
 
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         receiveButton = findViewById(R.id.imagerecieve);
         recievedFiles = findViewById(R.id.files);
         shareApp = findViewById(R.id.shareapp);
+        toolbar = findViewById(R.id.main_toolbar);
     }
 
     private void setListeners() {

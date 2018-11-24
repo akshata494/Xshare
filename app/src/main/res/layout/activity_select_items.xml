@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="10"
     tools:context="com.example.akshata.hanchu.SelectItemsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
+        android:layout_weight="0.25"
         android:theme="?attr/actionBarTheme"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark">
@@ -24,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
+        android:layout_weight="0.25"
         app:tabSelectedTextColor="@android:color/white"
         app:tabTextColor="@android:color/white">
 
@@ -62,7 +65,38 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/sendViewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </androidx.viewpager.widget.ViewPager>
+        android:layout_height="match_parent"
+        android:layout_weight="8"></androidx.viewpager.widget.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:orientation="horizontal"
+        android:background="@color/lightGrey"
+        android:layout_gravity="center_horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="95dp"
+            android:layout_marginRight="95dp"
+            android:layout_marginBottom="35dp"
+            android:background="@android:color/white"
+            android:backgroundTintMode="add"
+            android:elegantTextHeight="true"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0"
+            android:padding="2dp"
+            android:text="@string/SendText"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            app:cornerRadius="@android:dimen/app_icon_size" />
+
+    </LinearLayout>
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

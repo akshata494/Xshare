@@ -13,5 +13,6 @@
     <color name="materialBlueLight">#7cbcef</color>
     <color name="materialPurpleLight">#d792e2</color>
     <color name="materialPinkLight">#f5558b</color>
+    <color name="lightGrey">#f4f1f2</color>
 
 </resources>

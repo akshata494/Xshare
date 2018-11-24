@@ -21,7 +21,7 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class SelectItemsActivity extends AppCompatActivity implements AppFragment
-        .OnFragmentInteractionListener,PhotoFragment.OnFragmentInteractionListener, MusicFragment
+        .OnFragmentInteractionListener, PhotoFragment.OnFragmentInteractionListener, MusicFragment
         .OnFragmentInteractionListener, FileFragment.OnFragmentInteractionListener, VideoFragment
         .OnFragmentInteractionListener {
 
@@ -34,7 +34,6 @@ public class SelectItemsActivity extends AppCompatActivity implements AppFragmen
     TabItem tabFile;
     ViewPager viewPager;
     PageAdapter pageAdapter;
-    Button appFragmentButton;
 
     public static final String tag = "abcdselectitem";
 
@@ -47,17 +46,15 @@ public class SelectItemsActivity extends AppCompatActivity implements AppFragmen
         addListeners();
     }
 
-    private void doInitialWork(){
+    private void doInitialWork() {
         toolbar = findViewById(R.id.select_items_toolbar);
         tabLayout = findViewById(R.id.tablayout);
         tabApps = findViewById(R.id.tabApps);
         tabMusic = findViewById(R.id.tabMusic);
-        tabPhotos =  findViewById(R.id.tabPhotos);
+        tabPhotos = findViewById(R.id.tabPhotos);
         tabFile = findViewById(R.id.tabFile);
         tabVideo = findViewById(R.id.tabVideo);
         viewPager = findViewById(R.id.sendViewPager);
-
-        appFragmentButton = findViewById(R.id.sendapp);
 
         toolbar.setTitle(R.string.title_select_items);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
@@ -70,27 +67,27 @@ public class SelectItemsActivity extends AppCompatActivity implements AppFragmen
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
     }
 
-    public void addListeners(){
+    public void addListeners() {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if(tab.getPosition() == 0){
+                if (tab.getPosition() == 0) {
                     toolbar.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.colorPrimary));
+                            R.color.materialBlue));
                     tabLayout.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.colorPrimary));
+                            R.color.materialBlue));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(ContextCompat.getColor(SelectItemsActivity.this,
-                                R.color.colorPrimaryLight));
+                                R.color.materialBlue));
                 }
                 if (tab.getPosition() == 1) {
                     toolbar.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.materialGreen));
+                            R.color.materialBlue));
                     tabLayout.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.materialGreen));
+                            R.color.materialBlue));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(ContextCompat.getColor(SelectItemsActivity.this,
-                                R.color.materialGreenLight));
+                                R.color.materialBlue));
                 } else if (tab.getPosition() == 2) {
                     toolbar.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
                             R.color.materialBlue));
@@ -98,24 +95,23 @@ public class SelectItemsActivity extends AppCompatActivity implements AppFragmen
                             R.color.materialBlue));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(ContextCompat.getColor(SelectItemsActivity.this,
-                                R.color.materialBlueLight));
-                } else if(tab.getPosition() == 3){
+                                R.color.materialBlue));
+                } else if (tab.getPosition() == 3) {
                     toolbar.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.materialPink));
+                            R.color.materialBlue));
                     tabLayout.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.materialPink));
+                            R.color.materialBlue));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(ContextCompat.getColor(SelectItemsActivity.this,
-                                R.color.materialPinkLight));
-                }
-                else if(tab.getPosition() == 4){
+                                R.color.materialBlue));
+                } else if (tab.getPosition() == 4) {
                     toolbar.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.materialPurple));
+                            R.color.materialBlue));
                     tabLayout.setBackgroundColor(ContextCompat.getColor(SelectItemsActivity.this,
-                            R.color.materialPurple));
+                            R.color.materialBlue));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
                         getWindow().setStatusBarColor(ContextCompat.getColor(SelectItemsActivity.this,
-                                R.color.materialPurpleLight));
+                                R.color.materialBlue));
                 }
             }
 
@@ -137,19 +133,20 @@ public class SelectItemsActivity extends AppCompatActivity implements AppFragmen
         return true;
     }
 
-    public void onButtonPressed(View view){
+    public void onButtonPressed(View view) {
         onFragmentInteraction("song");
     }
 
     @Override
-    public void onFragmentInteraction(String whichFragment){
-        switch(whichFragment){
+    public void onFragmentInteraction(String whichFragment) {
+        switch (whichFragment) {
             case "song":
-                Intent i = new Intent(this.getApplicationContext(),SendActivity.class);
+                Intent i = new Intent(this.getApplicationContext(), SendActivity.class);
                 startActivity(i);
                 break;
 
-            default: break;
+            default:
+                break;
         }
     }
 
